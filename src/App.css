@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-primary {
+  background-color: rgb(230, 229, 229);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  width: auto;
+  height: auto;
+  opacity: 0.9;
+  margin-bottom: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar ul {
+  display: flex;
+  list-style: none;
+  font-weight: 500;
+  font-size: 14px;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin: 0 0.7rem;
+}
+
+.cardDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 40%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputBoxes {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  line-height: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.card #submitButton {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  padding: 0 1rem 1rem 0;
+  margin-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 576px) {
+  .card {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
