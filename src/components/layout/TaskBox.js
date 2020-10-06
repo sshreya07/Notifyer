@@ -14,10 +14,12 @@ const TaskBox = () => {
   return (
     <div className="cardDiv ">
       <Card className="card" variant="outlined">
-        <CardHeader title="Add New Task" id="cardHeader" />
+        <CardContent>
+          <CardHeader title="Add New Task" id="cardHeader" />
+        </CardContent>
         <CardActionArea>
           <CardContent className="inputBoxes">
-            <InputLabel focused onAnimationStart required>
+            <InputLabel focused required>
               title
             </InputLabel>
             <Input fullWidth required></Input>
@@ -25,13 +27,11 @@ const TaskBox = () => {
         </CardActionArea>
         <CardActionArea>
           <CardContent className="inputBoxes">
-            <InputLabel focused onAnimationStart>
-              Description
-            </InputLabel>
+            <InputLabel focused>Description</InputLabel>
             <Input fullWidth multiline></Input>
           </CardContent>
         </CardActionArea>
-        <ButtonGroup id="submitButton">
+        <ButtonGroup className="submitButton">
           <Button color="primary" className="Mui-focusVisible">
             ADD TASK
           </Button>

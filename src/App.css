@@ -21,6 +21,13 @@ body {
   margin-bottom: 3rem;
 }
 
+.navbar h3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  letter-spacing: 6px;
+}
+
 .navbar ul {
   display: flex;
   list-style: none;
@@ -53,12 +60,27 @@ body {
   line-height: 6px;
 }
 
-.card #submitButton {
+.card .submitButton {
   display: flex;
   justify-content: flex-end;
   width: auto;
   padding: 0 1rem 1rem 0;
   margin-top: 1rem;
+}
+
+#tasklist {
+  margin: 4rem 0;
+}
+
+.cardDiv #cardList {
+  width: 80%;
+  height: auto;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.cardDiv .card #cardList CardContent #listButtons {
+  margin: 0;
 }
 
 @media (max-width: 576px) {
