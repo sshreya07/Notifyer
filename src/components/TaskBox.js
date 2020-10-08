@@ -9,6 +9,7 @@ import {
   Input,
   InputLabel,
 } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 
 const TaskBox = () => {
   return (
@@ -33,7 +34,7 @@ const TaskBox = () => {
         </CardActionArea>
         <ButtonGroup className="submitButton">
           <Button color="primary" className="Mui-focusVisible">
-            ADD TASK
+            <AddIcon></AddIcon>&ensp; ADD TASK
           </Button>
         </ButtonGroup>
       </Card>

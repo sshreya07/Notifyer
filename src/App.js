@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/layout/Navbar";
-import TaskBox from "./components/layout/TaskBox";
-import TaskList from "./components/layout/TaskList";
+import Navbar from "./components/Navbar";
+import TaskBox from "./components/TaskBox";
+import TaskList from "./components/TaskList";
 
 function App() {
   return (
