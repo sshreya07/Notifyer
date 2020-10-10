@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -9,15 +9,23 @@ import {
 import TaskItem from "./TaskItem";
 
 const TaskList = () => {
+  const [text , setText] = useState("");
+
+  const onChange = (e) => {
+    setText(e.target.value);
+    console.log(text);
+  }
+
   return (
     <div id="tasklist" className="cardDiv">
       <Card className="card">
         <CardContent>
           <InputLabel>filter task</InputLabel>
-          <Input focused fullWidth></Input>
+          <Input focused fullWidth  value={text}
+          onChange={onChange}></Input>
         </CardContent>
         <CardContent>
-          <CardHeader title="Task List"></CardHeader>
+          <h2>Task List</h2>
         </CardContent>
         <TaskItem />
       </Card>

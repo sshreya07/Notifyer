@@ -1,16 +1,26 @@
 import React from "react";
 import "./App.css";
+import Home from "./components/Home";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
-import TaskBox from "./components/TaskBox";
-import TaskList from "./components/TaskList";
+import NotifyerState from "./components/context/NotifyerState";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <TaskBox />
-      <TaskList />
-    </div>
+    <NotifyerState>
+      <Router>
+        <div className="App">
+          <Navbar/>
+          <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/about" component={About} />
+          </Switch>
+          </div>
+        </div>
+      </Router>
+    </NotifyerState>
   );
 }
 

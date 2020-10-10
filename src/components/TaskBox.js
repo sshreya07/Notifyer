@@ -1,38 +1,69 @@
-import React from "react";
+import React, {useState,useContext}from "react";
 import {
   Button,
   ButtonGroup,
   Card,
   CardActionArea,
   CardContent,
-  CardHeader,
   Input,
   InputLabel,
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
+import NotifyerContext from "./context/notifyerContext";
+
 
 const TaskBox = () => {
+  const notifyerContext = useContext(NotifyerContext);
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  notifyerContext.getTask();
+
+  const onChangeTitle = (e) => {
+    setTitle(e.target.value);
+  }
+
+  const onChangeDescription = (e) => {
+    setDescription(e.target.value);
+  }
+
+
+  const taskAdded = (e)=>{
+    console.log("ok");
+    console.log(title);
+    console.log(description);
+    notifyerContext.getTitle(title);
+    notifyerContext.getDescription(description);
+    setTitle("");
+    setDescription("");
+
+    e.preventDefault();
+  }
+
   return (
     <div className="cardDiv ">
       <Card className="card" variant="outlined">
         <CardContent>
-          <CardHeader title="Add New Task" id="cardHeader" />
+          <h2 id="cardHeader">Add New Task</h2>
         </CardContent>
         <CardActionArea>
           <CardContent className="inputBoxes">
             <InputLabel focused required>
               title
             </InputLabel>
-            <Input fullWidth required></Input>
+            <Input fullWidth value={title}
+          onChange={onChangeTitle}></Input>
           </CardContent>
         </CardActionArea>
         <CardActionArea>
           <CardContent className="inputBoxes">
             <InputLabel focused>Description</InputLabel>
-            <Input fullWidth multiline></Input>
+            <Input fullWidth multiline value={description}
+          onChange={onChangeDescription}></Input>
           </CardContent>
         </CardActionArea>
-        <ButtonGroup className="submitButton">
+        <ButtonGroup className="submitButton" onClick={taskAdded}>
           <Button color="primary" className="Mui-focusVisible">
             <AddIcon></AddIcon>&ensp; ADD TASK
           </Button>
@@ -41,5 +72,6 @@ const TaskBox = () => {
     </div>
   );
 };
+
 
 export default TaskBox;

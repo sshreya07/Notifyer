@@ -1,13 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 body {
-  font-family: Roboto;
+  font-family: Raleway;
   margin: 0;
   padding: 0;
 }
 
 .bg-primary {
-  background-color: rgb(230, 229, 229);
+  background-color: rgb(100, 7, 221);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
 }
 
 .navbar {
@@ -19,6 +26,7 @@ body {
   height: auto;
   opacity: 0.9;
   margin-bottom: 3rem;
+  color: white;
 }
 
 .navbar h3 {
@@ -38,6 +46,11 @@ body {
 
 .navbar ul li {
   margin: 0 0.7rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
 }
 
 .cardDiv {
