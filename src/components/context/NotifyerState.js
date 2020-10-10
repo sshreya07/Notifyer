@@ -14,7 +14,7 @@ const NotifyerState = (props) => {
     const initialState = {
         title:"",
         description:"",
-        tasks: [],
+        tasks: []
     };
 
     const [state, dispatch] = useReducer(NotifyerReducer, initialState);
