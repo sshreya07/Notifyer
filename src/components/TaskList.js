@@ -7,6 +7,7 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import TaskItem from "./TaskItem";
+import notifyerContext from "./context/notifyerContext";
 
 const TaskList = () => {
   const [text , setText] = useState("");
@@ -14,6 +15,7 @@ const TaskList = () => {
   const onChange = (e) => {
     setText(e.target.value);
     console.log(text);
+    notifyerContext.searchTask(text);
   }
 
   return (
