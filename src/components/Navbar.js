@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-primary">
       <h3>
-        <img src={logo} width="40px" height="40px" alt="logo"></img>&ensp;
+        <img src={logo} width="40px" height="40px" alt="logo" id="logo"></img>&ensp;
         <span style={{fontWeight:"bolder"}}>NOTIFYER</span>
       </h3>
       <ul>

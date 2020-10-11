@@ -41,6 +41,13 @@ body {
   letter-spacing: 6px;
 }
 
+.navbar #logo {
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(91, 13, 143, 1);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(91, 13, 143, 1);
+  box-shadow: 0px 0px 35px 5px rgba(91, 13, 143, 1);
+  border-radius: 50%;
+}
+
 .navbar ul {
   display: flex;
   list-style: none;
