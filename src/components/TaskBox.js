@@ -43,13 +43,13 @@ const TaskBox = () => {
 
   return (
     <div className="cardDiv ">
-      <Card className="card" variant="outlined">
+      <Card className="card" >
         <CardContent>
           <h2 id="cardHeader">Add New Task</h2>
         </CardContent>
         <CardActionArea>
           <CardContent className="inputBoxes">
-            <InputLabel focused required>
+            <InputLabel focused required style={{color:"#3d3d3d"}}>
               title
             </InputLabel>
             <Input fullWidth value={title}
@@ -58,13 +58,13 @@ const TaskBox = () => {
         </CardActionArea>
         <CardActionArea>
           <CardContent className="inputBoxes">
-            <InputLabel focused>Description</InputLabel>
+            <InputLabel focused style={{color:"#3d3d3d"}}>Description</InputLabel>
             <Input fullWidth multiline value={description}
           onChange={onChangeDescription}></Input>
           </CardContent>
         </CardActionArea>
         <ButtonGroup className="submitButton" onClick={taskAdded}>
-          <Button color="primary" className="Mui-focusVisible">
+          <Button className="Mui-focusVisible" id="addtask">
             <AddIcon></AddIcon>&ensp; ADD TASK
           </Button>
         </ButtonGroup>

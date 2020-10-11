@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const Navbar = () => {
   return (
@@ -11,10 +12,10 @@ const Navbar = () => {
       </h3>
       <ul>
         <li>
-          <Link to="/">HOME</Link>
+          <Button className="navButtons Mui-focusVisible" size="small"><Link to="/">HOME</Link></Button>
         </li>
         <li>
-          <Link to="/about">ABOUT</Link>
+          <Button className="navButtons Mui-focusVisible" size="small"><Link to="/about">ABOUT</Link></Button>
         </li>
       </ul>
     </nav>

@@ -7,7 +7,12 @@ body {
 }
 
 .bg-primary {
-  background-color: rgb(100, 7, 221);
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 31%,
+    rgba(237, 41, 57, 1) 71%
+  );
 }
 
 .container {
@@ -53,6 +58,15 @@ body {
   color: white;
 }
 
+.navbar ul li .navButtons {
+  border: 6px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-radius: 50px;
+  border-color: rgb(120, 31, 179);
+  padding: 2px 20px;
+}
+
 .cardDiv {
   display: flex;
   justify-content: center;
@@ -64,6 +78,9 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  -webkit-box-shadow: 0px 0px 35px -15px rgba(219, 219, 219, 1);
+  -moz-box-shadow: 0px 0px 35px -15px rgba(219, 219, 219, 1);
+  box-shadow: 0px 0px 35px -15px rgba(219, 219, 219, 1);
 }
 
 .inputBoxes {
@@ -79,6 +96,15 @@ body {
   width: auto;
   padding: 0 1rem 1rem 0;
   margin-top: 1rem;
+}
+
+.card .submitButton #addtask {
+  background: #e81828;
+  color: white;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
+  -moz-box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
+  box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
 }
 
 #tasklist {
