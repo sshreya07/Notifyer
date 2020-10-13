@@ -14,7 +14,7 @@ const TaskItem = () => {
         {tasks.map((task) => (
           <Card id="cardList" variant="outlined">
           <CardContent id="cardTitle">
-            <h3 style={{ fontWeight: "bold", color: "rgb(100, 7, 221)" }}>{task.title}</h3>
+            <h3 style={{ fontWeight: "bold", color: "rgb(100, 7, 221)" }}>{task}</h3>
             <h5 style={{ fontWeight: "normal" }}>{task.description}</h5>
             <span id="cardButton">
               <ButtonGroup className="submitButton" id="listButtons">

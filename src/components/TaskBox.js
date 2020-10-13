@@ -20,7 +20,7 @@ const TaskBox = () => {
 
   const {tasks} = notifyerContext;
 
-  notifyerContext.getTask();
+  // notifyerContext.getTask();
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value);

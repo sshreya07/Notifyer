@@ -21,8 +21,14 @@ const NotifyerState = (props) => {
 
     const [state, dispatch] = useReducer(NotifyerReducer, initialState);
 
-    const getTask = () => {
-    }
+    // const getTask = async() => {
+    //     const res = await axios.get(`tasks.json`);
+
+    //     dispatch({
+    //         type: GET_TASK,
+    //         payload: res.data.items
+    //     })
+    // }
 
     const storeInLocalStorage = (Title,Desc) => {
         let titles;
@@ -56,7 +62,6 @@ const NotifyerState = (props) => {
             payload: titles
         })
 
-
     }
   
     const getTitle = (text) => {
@@ -81,7 +86,7 @@ const NotifyerState = (props) => {
                 tasks: state.tasks,
                 getTitle,
                 getDescription,
-                getTask,
+                // getTask,
                 storeInLocalStorage,
             }}
         >
