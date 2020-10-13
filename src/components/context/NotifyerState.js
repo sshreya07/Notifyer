@@ -2,7 +2,6 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import NotifyerContext from "./notifyerContext";
 import NotifyerReducer from "./notifyreReducer";
-import TaskItem from "../TaskItem";
 
 import {
     SEARCH_TASK,
@@ -10,12 +9,11 @@ import {
     GET_DESCRIPTION,
     GET_TASK,
 } from '../types';
-import notifyerContext from "./notifyerContext";
 
 const NotifyerState = (props) => {
     const initialState = {
         title:"",
-        description:"",
+        // description:"",
         tasks: []
     };
 
@@ -30,9 +28,8 @@ const NotifyerState = (props) => {
     //     })
     // }
 
-    const storeInLocalStorage = (Title,Desc) => {
+    const storeInLocalStorage = (Title) => {
         let titles;
-        let desc;
         
         if(localStorage.getItem('title') === null){
             titles = [];
@@ -44,18 +41,18 @@ const NotifyerState = (props) => {
 
         localStorage.setItem('title', JSON.stringify(titles));
 
-        if(localStorage.getItem('description') === null){
-            desc = [];
-        }else{
-            desc = JSON.parse(localStorage.getItem('description'));
-        }
+        // if(localStorage.getItem('description') === null){
+        //     desc = [];
+        // }else{
+        //     desc = JSON.parse(localStorage.getItem('description'));
+        // }
 
-        desc.push(Desc);
+        // desc.push(Desc);
 
-        localStorage.setItem('description', JSON.stringify(desc));
+        // localStorage.setItem('description', JSON.stringify(desc));
         
         console.log(titles);
-        console.log(desc);
+        // console.log(desc);
 
         dispatch({
             type: GET_TASK,
@@ -82,10 +79,10 @@ const NotifyerState = (props) => {
         <NotifyerContext.Provider
             value={{
                 title: state.title,
-                description: state.description,
+                // description: state.description,
                 tasks: state.tasks,
                 getTitle,
-                getDescription,
+                // getDescription,
                 // getTask,
                 storeInLocalStorage,
             }}

@@ -12,11 +12,11 @@ export default(state,action) => {
                 ...state,
                 title: action.payload,
             };
-        case GET_DESCRIPTION:
-            return {
-                ...state,
-                description: action.payload,
-            }
+        // case GET_DESCRIPTION:
+        //     return {
+        //         ...state,
+        //         description: action.payload,
+        //     }
         case GET_TASK:
             return {
                 ...state,

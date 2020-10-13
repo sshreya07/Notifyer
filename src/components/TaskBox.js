@@ -16,7 +16,6 @@ const TaskBox = () => {
   const notifyerContext = useContext(NotifyerContext);
 
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
 
   const {tasks} = notifyerContext;
 
@@ -26,20 +25,12 @@ const TaskBox = () => {
     setTitle(e.target.value);
   }
 
-  const onChangeDescription = (e) => {
-    setDescription(e.target.value);
-  }
-
-
   const taskAdded = (e)=>{
     console.log("ok");
     console.log(title);
-    console.log(description);
     notifyerContext.getTitle(title);
-    notifyerContext.getDescription(description);
     setTitle("");
-    setDescription("");
-    notifyerContext.storeInLocalStorage(title,description);
+    notifyerContext.storeInLocalStorage(title);
     console.log(tasks);
     e.preventDefault();
   }
@@ -57,13 +48,6 @@ const TaskBox = () => {
             </InputLabel>
             <Input fullWidth value={title}
           onChange={onChangeTitle}></Input>
-          </CardContent>
-        </CardActionArea>
-        <CardActionArea>
-          <CardContent className="inputBoxes">
-            <InputLabel focused style={{color:"#3d3d3d"}}>Description</InputLabel>
-            <Input fullWidth multiline value={description}
-          onChange={onChangeDescription}></Input>
           </CardContent>
         </CardActionArea>
         <ButtonGroup className="submitButton" onClick={taskAdded}>
