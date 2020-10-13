@@ -11,7 +11,7 @@ const TaskItem = () => {
 
     return (
       <Fragment>
-        {/* {tasks.map((task) => (
+        {tasks.map((task) => (
           <Card id="cardList" variant="outlined">
           <CardContent id="cardTitle">
             <h3 style={{ fontWeight: "bold", color: "rgb(100, 7, 221)" }}>{task.title}</h3>
@@ -37,7 +37,7 @@ const TaskItem = () => {
             </span>
           </CardContent>
         </Card>
-        ))}  */}
+        ))} 
         </Fragment>
     );
   }

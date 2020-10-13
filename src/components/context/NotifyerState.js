@@ -22,7 +22,6 @@ const NotifyerState = (props) => {
     const [state, dispatch] = useReducer(NotifyerReducer, initialState);
 
     const getTask = () => {
-
     }
 
     const storeInLocalStorage = (Title,Desc) => {
@@ -48,6 +47,15 @@ const NotifyerState = (props) => {
         desc.push(Desc);
 
         localStorage.setItem('description', JSON.stringify(desc));
+        
+        console.log(titles);
+        console.log(desc);
+
+        dispatch({
+            type: GET_TASK,
+            payload: titles
+        })
+
 
     }
   
@@ -70,6 +78,7 @@ const NotifyerState = (props) => {
             value={{
                 title: state.title,
                 description: state.description,
+                tasks: state.tasks,
                 getTitle,
                 getDescription,
                 getTask,

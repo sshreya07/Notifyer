@@ -18,7 +18,9 @@ const TaskBox = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  // notifyerContext.getTask();
+  const {tasks} = notifyerContext;
+
+  notifyerContext.getTask();
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -38,6 +40,7 @@ const TaskBox = () => {
     setTitle("");
     setDescription("");
     notifyerContext.storeInLocalStorage(title,description);
+    console.log(tasks);
     e.preventDefault();
   }
 
