@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import NotifyerContext from "./notifyerContext";
 import NotifyerReducer from "./notifyreReducer";
+import TaskItem from "../TaskItem";
 
 import {
     SEARCH_TASK,
@@ -9,6 +10,7 @@ import {
     GET_DESCRIPTION,
     GET_TASK,
 } from '../types';
+import notifyerContext from "./notifyerContext";
 
 const NotifyerState = (props) => {
     const initialState = {
@@ -19,13 +21,34 @@ const NotifyerState = (props) => {
 
     const [state, dispatch] = useReducer(NotifyerReducer, initialState);
 
-    const getTask = async () => {
-        const res = await axios.get('tasks.json');
+    const getTask = () => {
 
-        dispatch({
-            type: GET_TASK,
-            payload: res.data.items,
-        })
+    }
+
+    const storeInLocalStorage = (Title,Desc) => {
+        let titles;
+        let desc;
+        
+        if(localStorage.getItem('title') === null){
+            titles = [];
+        }else{
+            titles = JSON.parse(localStorage.getItem('title'));
+        }
+
+        titles.push(Title);
+
+        localStorage.setItem('title', JSON.stringify(titles));
+
+        if(localStorage.getItem('description') === null){
+            desc = [];
+        }else{
+            desc = JSON.parse(localStorage.getItem('description'));
+        }
+
+        desc.push(Desc);
+
+        localStorage.setItem('description', JSON.stringify(desc));
+
     }
   
     const getTitle = (text) => {
@@ -50,6 +73,7 @@ const NotifyerState = (props) => {
                 getTitle,
                 getDescription,
                 getTask,
+                storeInLocalStorage,
             }}
         >
         {props.children}
