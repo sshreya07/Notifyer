@@ -66,6 +66,7 @@ body {
 }
 
 .navbar ul li .navButtons {
+  overflow: hidden;
   border: 6px solid;
   border-image-slice: 1;
   border-width: 5px;
@@ -73,6 +74,33 @@ body {
   border-color: rgb(120, 31, 179);
   padding: 2px 20px;
 }
+
+.navbar ul li .navButtons:hover {
+  transform: translate(0, -2px);
+  -webkit-box-shadow: 0px 10px 15px -6px rgba(91, 13, 143, 0.25);
+  -moz-box-shadow: 0px 10px 15px -6px rgba(91, 13, 143, 0.25);
+  box-shadow: 0px 10px 15px -6px rgba(91, 13, 143, 0.25);
+}
+
+/* .navbar ul li .navButtons:hover::after {
+  transform: rotate(150deg);
+}
+
+.navbar ul li .navButtons::after {
+  transition: all 0.5s ease;
+  width: auto;
+  height: auto;
+  position: absolute;
+  /* top: -50px; */
+/* left: -100px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 20%,
+    ff3cac 50%,
+    #c625d0 100%
+  );
+} */
 
 .cardDiv {
   display: flex;
@@ -106,12 +134,17 @@ body {
 }
 
 .card .submitButton #addtask {
+  overflow: hidden;
   background: #e81828;
   color: white;
   border-radius: 50px;
-  -webkit-box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
-  -moz-box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
-  box-shadow: 0px 7px 15px -6px rgba(255, 0, 34, 0.7);
+}
+
+.card .submitButton #addtask:hover {
+  transform: translate(0, -2px);
+  -webkit-box-shadow: 0px 10px 15px -6px rgba(255, 0, 34, 0.7);
+  -moz-box-shadow: 0px 10px 15px -6px rgba(255, 0, 34, 0.7);
+  box-shadow: 0px 10px 15px -6px rgba(255, 0, 34, 0.7);
 }
 
 #tasklist {

@@ -50,6 +50,8 @@ const NotifyerState = (props) => {
         // desc.push(Desc);
 
         // localStorage.setItem('description', JSON.stringify(desc));
+
+        // localStorage.clear();
         
         console.log(titles);
         // console.log(desc);
