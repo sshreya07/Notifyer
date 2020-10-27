@@ -5,8 +5,7 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  Input,
-  InputLabel,
+  TextField
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import NotifyerContext from "./context/notifyerContext";
@@ -43,11 +42,7 @@ const TaskBox = () => {
         </CardContent>
         <CardActionArea>
           <CardContent className="inputBoxes">
-            <InputLabel focused required style={{color:"#3d3d3d"}}>
-              title
-            </InputLabel>
-            <Input fullWidth value={title}
-          onChange={onChangeTitle}></Input>
+          <TextField required id="standard-required" label="task" variant="outlined" onChange={onChangeTitle}/>
           </CardContent>
         </CardActionArea>
         <ButtonGroup className="submitButton" onClick={taskAdded}>
