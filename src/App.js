@@ -7,6 +7,7 @@ import NotifyerState from "./components/context/NotifyerState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
+
   return (
     <NotifyerState>
       <Router>

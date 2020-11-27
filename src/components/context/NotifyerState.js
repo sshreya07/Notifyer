@@ -19,27 +19,27 @@ const NotifyerState = (props) => {
 
     const [state, dispatch] = useReducer(NotifyerReducer, initialState);
 
-    // const getTask = async() => {
-    //     const res = await axios.get(`tasks.json`);
+    const getTask = async() => {
+        const res = await axios.get(`https://localhost:44388/api/task`);
 
-    //     dispatch({
-    //         type: GET_TASK,
-    //         payload: res.data.items
-    //     })
-    // }
+        dispatch({
+            type: GET_TASK,
+            payload: res.data.items
+        })
+    }
 
-    const storeInLocalStorage = (Title) => {
-        let titles;
+    // const storeInLocalStorage = (Title) => {
+    //     let titles;
         
-        if(localStorage.getItem('title') === null){
-            titles = [];
-        }else{
-            titles = JSON.parse(localStorage.getItem('title'));
-        }
+    //     if(localStorage.getItem('title') === null){
+    //         titles = [];
+    //     }else{
+    //         titles = JSON.parse(localStorage.getItem('title'));
+    //     }
 
-        titles.push(Title);
+    //     titles.push(Title);
 
-        localStorage.setItem('title', JSON.stringify(titles));
+    //     localStorage.setItem('title', JSON.stringify(titles));
 
         // if(localStorage.getItem('description') === null){
         //     desc = [];
@@ -53,15 +53,15 @@ const NotifyerState = (props) => {
 
         // localStorage.clear();
         
-        console.log(titles);
+        // console.log(titles);
         // console.log(desc);
 
-        dispatch({
-            type: GET_TASK,
-            payload: titles
-        })
+        // dispatch({
+        //     type: GET_TASK,
+        //     payload: titles
+        // })
 
-    }
+    // }
   
     const getTitle = (text) => {
         dispatch({ 
@@ -85,8 +85,8 @@ const NotifyerState = (props) => {
                 tasks: state.tasks,
                 getTitle,
                 // getDescription,
-                // getTask,
-                storeInLocalStorage,
+                getTask,
+                // storeInLocalStorage,
             }}
         >
         {props.children}

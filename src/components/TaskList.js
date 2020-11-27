@@ -5,6 +5,8 @@ import {
   CardContent,
   Input,
   InputLabel,
+  Button,
+  ButtonGroup
 } from "@material-ui/core";
 import TaskItem from "./TaskItem";
 import notifyerContext from "./context/notifyerContext";
@@ -18,6 +20,11 @@ const TaskList = () => {
     notifyerContext.searchTask(text);
   }
 
+  const getAllTask = (e) =>{
+    notifyerContext.getTask();
+    e.preventDefault();
+  }
+
   return (
     <div id="tasklist" className="cardDiv">
       <Card className="card">
@@ -28,6 +35,11 @@ const TaskList = () => {
         </CardContent>
         <CardContent>
           <h2>Task List</h2>
+          <ButtonGroup className="submitButton" onClick={getAllTask}>
+          <Button className="Mui-focusVisible" >
+             GET TASK
+          </Button>
+        </ButtonGroup>
         </CardContent>
         <TaskItem />
       </Card>

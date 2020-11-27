@@ -29,7 +29,7 @@ const TaskBox = () => {
     console.log(title);
     notifyerContext.getTitle(title);
     setTitle("");
-    notifyerContext.storeInLocalStorage(title);
+    // notifyerContext.storeInLocalStorage(title);
     console.log(tasks);
     e.preventDefault();
   }
