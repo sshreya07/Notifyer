@@ -1,13 +1,9 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext} from "react";
 import { Card, CardContent, Button, ButtonGroup } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
-import NotifyerContext from "./context/notifyerContext";
 
-const TaskItem = () => {
-  const notifyerContext = useContext(NotifyerContext);
-
-  const { tasks } = notifyerContext;
+const TaskItem = ({tasks}) => {
 
     return (
       <Fragment>

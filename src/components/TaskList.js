@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import {
   Card,
   CardHeader,
@@ -9,10 +9,21 @@ import {
   ButtonGroup
 } from "@material-ui/core";
 import TaskItem from "./TaskItem";
-import notifyerContext from "./context/notifyerContext";
+import NotifyerContext from "./context/notifyerContext";
 
 const TaskList = () => {
   const [text , setText] = useState("");
+
+  const notifyerContext = useContext(NotifyerContext);
+
+  const [task,setTasks] = useState([]);
+
+  const {tasks } = notifyerContext;
+
+  // useEffect(()=>{
+  //   notifyerContext.getTask();
+  //     // eslint-disable-next-line
+  // }, []);
 
   const onChange = (e) => {
     setText(e.target.value);
@@ -20,9 +31,9 @@ const TaskList = () => {
     notifyerContext.searchTask(text);
   }
 
-  const getAllTask = (e) =>{
-    notifyerContext.getTask();
+  const getAllTask = (e) => {
     e.preventDefault();
+    notifyerContext.getTask();
   }
 
   return (
@@ -35,13 +46,13 @@ const TaskList = () => {
         </CardContent>
         <CardContent>
           <h2>Task List</h2>
-          <ButtonGroup className="submitButton" onClick={getAllTask}>
+          <ButtonGroup className="submitButton" onClick={getAllTask} >
           <Button className="Mui-focusVisible" >
              GET TASK
           </Button>
         </ButtonGroup>
         </CardContent>
-        <TaskItem />
+        <TaskItem tasks={tasks} />
       </Card>
     </div>
   );
